@@ -16,32 +16,38 @@
 // };
 
 module.exports = function getLoveTrianglesCount(preferences) {
-    let len = Math.floor(preferences.length / 3);
-
-    let count = 0;
 
 
-    for (let i = 0, iM = 0; i < len; i++, iM += 3) {
-
-        let a = iM,
-            b = a + 1,
-            c = a + 2;
 
 
-        let first = preferences[a],
-            second = preferences[b],
-            third = preferences[c],
-            len = Math.floor(preferences.length / 3);
+    for (let i = 0, count = 0; i < preferences.length; i++) {
+
+        let first = i,
+            second = preferences[first] - 1,
+            third = preferences[second] - 1;
 
 
-        if (second == first + 1 && third == first - 1) {
+
+        if (preferences[third] == (preferences.indexOf(preferences[first, i]) + 1) &&
+            preferences[first] == (preferences.indexOf(preferences[second]) + 1) &&
+            preferences.indexOf(preferences[third], third) + 1 == preferences[second] &&
+            preferences[third] == i + 1 && preferences[second] != i + 1 &&
+            preferences[first] != i + 1
+            //            && 
+
+        ) {
+
 
             count += 1;
-        } else { count += 0; }
+
+        } else {}
+
+        delete preferences[first];
+
+        var countt = count;
 
 
     }
 
-
-    return (count);
+    return (countt);
 };
