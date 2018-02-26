@@ -29,8 +29,7 @@ module.exports = function getLoveTrianglesCount(preferences) {
 
 
         if (preferences[third] == (preferences.indexOf(preferences[first, i]) + 1) &&
-            preferences[first] == (preferences.indexOf(preferences[second]) + 1) &&
-            preferences.indexOf(preferences[third], third) + 1 == preferences[second] &&
+
             preferences[third] == i + 1 && preferences[second] != i + 1 &&
             preferences[first] != i + 1
             //            && 
